@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BackOffice.Aplicacao\BackOffice.Aplicacao.csproj" />
+    <ProjectReference Include="..\BackOffice.Dominio\BackOffice.Dominio.csproj" />
+    <ProjectReference Include="..\BackOffice.Infra\BackOffice.Infra.csproj" />
+  </ItemGroup>
+
 </Project>
