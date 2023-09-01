@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackOffice.API", "BackOffice.API\BackOffice.API.csproj", "{AE581272-7A14-4351-B1E1-E538780B2490}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE581272-7A14-4351-B1E1-E538780B2490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE581272-7A14-4351-B1E1-E538780B2490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE581272-7A14-4351-B1E1-E538780B2490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE581272-7A14-4351-B1E1-E538780B2490}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F3CAC87-40E3-4CE0-906C-6F89859A3341}
+	EndGlobalSection
+EndGlobal
