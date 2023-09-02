@@ -12,6 +12,8 @@ namespace BackOffice.Dominio.Entities
         public string Nome { get; private set; }
         public long PessoaId { get; set; }
         public Pessoa Pessoa { get; set; }
+        public DateTime DataCadastro { get; set; }
+        public DateTime DataAtualizacao { get; set; }
 
         public Departamento(string nome)
         {
@@ -22,6 +24,24 @@ namespace BackOffice.Dominio.Entities
         {
             ValidaDepartamento(nome);
             PessoaId = pessoaId;
+            DataCadastro = DateTime.Now;
+        }
+
+        public Departamento(long id, string nome, long pessoaId)
+        {
+            ValidaDepartamento(nome);
+            DominioExceptionValidation.When(id < 0, "Id inválido.");
+            PessoaId = pessoaId;
+            Id = id;
+            DataCadastro = DateTime.Now;
+            DataAtualizacao = DateTime.Now;
+        }
+
+        public void Update(string nome, long pessoaId)
+        {
+            ValidaDepartamento(nome);
+            PessoaId = pessoaId;
+            DataAtualizacao = DateTime.Now;
         }
 
         private void ValidaDepartamento(string nome)
@@ -31,6 +51,8 @@ namespace BackOffice.Dominio.Entities
 
             DominioExceptionValidation.When(nome.Length < 3,
                 "Nome inválido, mínimo de 3 caracteres é requerido.");
+
+            Nome = nome;
         }
     }
 }

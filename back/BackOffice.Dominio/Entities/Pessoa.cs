@@ -19,16 +19,23 @@ namespace BackOffice.Dominio.Entities
         public long QualificacaoId { get; set; }
         public Qualificacao Qualificacao { get; set; }
         public ICollection<Departamento> Departamentos { get; set; }
+        public DateTime DataCadastro { get; set; }
+        public DateTime DataAtualizacao { get; set; }
 
         public Pessoa(string nome, string documento, string apelido)
         {
             ValidaPessoa(nome, documento, apelido);
+            DataCadastro = DateTime.Now;
+            DataAtualizacao = DateTime.Now;
         }
 
         public Pessoa(long id, string nome, string documento, string apelido)
         {
             ValidaPessoa(nome, documento, apelido);
+            DominioExceptionValidation.When(id < 0, "Id inválido.");
             Id = id;
+            DataCadastro = DateTime.Now;
+            DataAtualizacao = DateTime.Now;
         }
 
         public void Update(string nome, string documento, string apelido, long tipoPessoaId, long enderecoId, long qualificacaoId)
@@ -37,6 +44,7 @@ namespace BackOffice.Dominio.Entities
             TipoPessoaId = tipoPessoaId;
             EnderecoId = enderecoId;
             QualificacaoId = qualificacaoId;
+            DataAtualizacao = DateTime.Now;
         }
 
         private void ValidaPessoa(string nome, string documento, string apelido)

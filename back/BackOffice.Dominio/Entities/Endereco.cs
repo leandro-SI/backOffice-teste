@@ -12,19 +12,32 @@ namespace BackOffice.Dominio.Entities
         public string Rua { get; private set; }
         public string Numero { get; private set; }
         public string Complemento { get; private set; }
-        public string CEP { get; private set; }
+        public string Cep { get; private set; }
         public string Cidade { get; private set; }
-        public string UF { get; private set; }
+        public string Uf { get; private set; }
+        public DateTime DataCadastro { get; set; }
+        public DateTime DataAtualizacao { get; set; }
 
         public Endereco(string rua, string numero, string complemento, string cep, string cidade, string uf)
         {
             ValidaEndereco(rua, numero, complemento, cep, cidade, uf);
+            DataCadastro = DateTime.Now;
+            DataAtualizacao = DateTime.Now;
         }
 
         public Endereco(long id, string rua, string numero, string complemento, string cep, string cidade, string uf)
         {
             ValidaEndereco(rua, numero, complemento, cep, cidade, uf);
+            DominioExceptionValidation.When(id < 0, "Id inválido.");
             Id = id;
+            DataCadastro = DateTime.Now;
+            DataAtualizacao = DateTime.Now;
+        }
+
+        public void Update(string rua, string numero, string complemento, string cep, string cidade, string uf)
+        {
+            ValidaEndereco(rua, numero, complemento, cep,cidade, uf);
+            DataAtualizacao = DateTime.Now;
         }
 
 
@@ -45,9 +58,9 @@ namespace BackOffice.Dominio.Entities
             Rua = rua;
             Numero = numero;
             Complemento = complemento;
-            CEP = cep;
+            Cep = cep;
             Cidade = cidade;
-            UF = uf;
+            Uf = uf;
         }
     }
 }

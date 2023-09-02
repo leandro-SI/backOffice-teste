@@ -9,12 +9,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddInfraAPI(builder.Configuration);
 
 var app = builder.Build();
-
-var services = new ServiceCollection();
-
-services.AddInfraAPI(app.Configuration);
 
 
 // Configure the HTTP request pipeline.

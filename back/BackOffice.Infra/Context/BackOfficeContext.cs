@@ -12,7 +12,7 @@ namespace BackOffice.Infra.Context
     {
         public BackOfficeContext(DbContextOptions<BackOfficeContext> options) : base(options)
         {
-
+            this.Database.EnsureCreated();
         }
 
         public DbSet<Departamento> Departamentos { get; set; }
@@ -27,6 +27,7 @@ namespace BackOffice.Infra.Context
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(BackOfficeContext).Assembly);
+
         }
     }
 }
