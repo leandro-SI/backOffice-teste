@@ -9,17 +9,18 @@ using System.Threading.Tasks;
 
 namespace BackOffice.Infra.EntitiesConfiguration
 {
-    public class TipoPessoaConfiguration : IEntityTypeConfiguration<TipoPessoa>
+    public class QualificacaoConfiguration : IEntityTypeConfiguration<Qualificacao>
     {
-        public void Configure(EntityTypeBuilder<TipoPessoa> builder)
+        public void Configure(EntityTypeBuilder<Qualificacao> builder)
         {
             builder.HasKey(t => t.Id);
             builder.Property(t => t.Descricao).HasMaxLength(50).IsRequired();
             builder.HasIndex(t => t.Descricao).IsUnique();
 
             builder.HasData(
-                new TipoPessoa(1, "Fisica"),
-                new TipoPessoa(2, "Juridica")
+                new Qualificacao(1, "Cliente"),
+                new Qualificacao(2, "Fornecedor"),
+                new Qualificacao(3, "Colaborador")
             );
         }
     }

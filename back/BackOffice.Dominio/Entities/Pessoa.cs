@@ -18,6 +18,7 @@ namespace BackOffice.Dominio.Entities
         public Endereco Endereco { get; set; }
         public long QualificacaoId { get; set; }
         public Qualificacao Qualificacao { get; set; }
+        public ICollection<Departamento> Departamentos { get; set; }
 
         public Pessoa(string nome, string documento, string apelido)
         {
