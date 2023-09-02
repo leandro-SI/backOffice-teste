@@ -1,4 +1,6 @@
-﻿using BackOffice.Infra.Context;
+﻿using BackOffice.Dominio.Interfaces;
+using BackOffice.Infra.Context;
+using BackOffice.Infra.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +19,9 @@ namespace BackOffice.Ioc
             services.AddDbContext<BackOfficeContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
                 b => b.MigrationsAssembly(typeof(BackOfficeContext).Assembly.FullName)));
+
+            services.AddScoped<IDepartamentoRepository, DepartamentoRepository>();
+            services.AddScoped<IPessoaRepository, PessoaRepository>();
 
             return services;
         }
