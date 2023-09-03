@@ -1,4 +1,7 @@
-﻿using BackOffice.Dominio.Interfaces;
+﻿using BackOffice.Aplicacao.Profiles;
+using BackOffice.Aplicacao.Services;
+using BackOffice.Aplicacao.Services.Interfaces;
+using BackOffice.Dominio.Interfaces;
 using BackOffice.Infra.Context;
 using BackOffice.Infra.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +25,11 @@ namespace BackOffice.Ioc
 
             services.AddScoped<IDepartamentoRepository, DepartamentoRepository>();
             services.AddScoped<IPessoaRepository, PessoaRepository>();
+
+            services.AddScoped<IPessoaService, PessoaService>();
+            services.AddScoped<IDepartamentoService, DepartamentoService>();
+
+            services.AddAutoMapper(typeof(MappingProfile));
 
             return services;
         }
