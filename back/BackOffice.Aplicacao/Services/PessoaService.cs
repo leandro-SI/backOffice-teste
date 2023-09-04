@@ -56,5 +56,26 @@ namespace BackOffice.Aplicacao.Services
 
             await _pessoaRepository.RemoverPessoa(pessoa);
         }
+
+        public async Task<IEnumerable<TipoPessoaDTO>> ListarTiposPessoa()
+        {
+            var tiposPessoa = await _pessoaRepository.ListarTiposPessoa();
+
+            return _mapper.Map<IEnumerable<TipoPessoaDTO>>(tiposPessoa);
+        }
+
+        public async Task<IEnumerable<TipoPerfilDTO>> ListarTiposPerfil()
+        {
+            var tiposPerfil = await _pessoaRepository.ListarTiposPerfil();
+
+            return _mapper.Map<IEnumerable<TipoPerfilDTO>>(tiposPerfil);
+        }
+
+        public async Task<IEnumerable<QualificacaoDTO>> ListarQualificacoes()
+        {
+            var qualificacoes = await _pessoaRepository.ListarQualificacoes();
+
+            return _mapper.Map<IEnumerable<QualificacaoDTO>>(qualificacoes);
+        }
     }
 }

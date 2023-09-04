@@ -53,5 +53,20 @@ namespace BackOffice.Infra.Repositories
 
             return pessoa;
         }
+
+        public async Task<IEnumerable<TipoPessoa>> ListarTiposPessoa()
+        {
+            return await _pessoaContext.TipoPessoas.ToListAsync();
+        }
+
+        public async Task<IEnumerable<TipoPerfil>> ListarTiposPerfil()
+        {
+            return await _pessoaContext.TipoPerfis.ToListAsync();
+        }
+
+        public async Task<IEnumerable<Qualificacao>> ListarQualificacoes()
+        {
+            return await _pessoaContext.Qualificacoes.ToListAsync();
+        }
     }
 }

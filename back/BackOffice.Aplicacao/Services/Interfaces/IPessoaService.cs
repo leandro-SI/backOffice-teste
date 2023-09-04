@@ -15,5 +15,8 @@ namespace BackOffice.Aplicacao.Services.Interfaces
         Task CadastrarPessoa(PessoaDTO pessoaDto);
         Task AtualizarPessoa(PessoaDTO pessoaDto);
         Task RemoverPessoa(long id);
+        Task<IEnumerable<TipoPessoaDTO>> ListarTiposPessoa();
+        Task<IEnumerable<TipoPerfilDTO>> ListarTiposPerfil();
+        Task<IEnumerable<QualificacaoDTO>> ListarQualificacoes();
     }
 }

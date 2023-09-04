@@ -28,13 +28,125 @@
     <section class="content">
       <div class="container-fluid">
 
-        <div class="card rounded shadow-sm p-3">
-          <div class="d-flex">
+        <div class="card rounded shadow-sm">
+          <form [formGroup]="form" #fr="ngForm" >
+            <div class="p-3">
+              <div class="form-row">
+
+                <div class="form-group col-md-6">
+                  <label>Nome</label>
+                  <input type="text" class="form-control" [ngClass]="cssValidator(f.nome)"
+                  formControlName="nome" placeholder="Insira o Nome">
+                  <div *ngIf="f.nome.errors?.required" class="invalid-feedback">
+                    nome é obrigatório
+                  </div>
+                  <div *ngIf="f.nome.errors?.minlength" class="invalid-feedback">
+                    nome deve ter no mínimo 3 caracteres.
+                  </div>
+                  <div *ngIf="f.nome.errors?.maxlength" class="invalid-feedback">
+                    nome deve ter no máximo 100 caracteres.
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label>Apelido</label>
+                  <input type="text" class="form-control" [ngClass]="cssValidator(f.apelido)"
+                  formControlName="apelido" placeholder="Insira o Apelido">
+                  <div *ngIf="f.apelido.errors?.required" class="invalid-feedback">
+                    apelido é obrigatório
+                  </div>
+                  <div *ngIf="f.apelido.errors?.minlength" class="invalid-feedback">
+                    apelido deve ter no mínimo 3 caracteres.
+                  </div>
+                  <div *ngIf="f.apelido.errors?.maxlength" class="invalid-feedback">
+                    apelido deve ter no máximo 100 caracteres.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label>Tipo Pessoa</label>
+                  <select class="form-control" formControlName="tipoPessoa">
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option *ngFor="let tipoPessoa of tiposPessoa" [value]="tipoPessoa.id">{{ tipoPessoa.descricao }}</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label>Documento</label>
+                  <input type="text" class="form-control" [ngClass]="cssValidator(f.documento)"
+                   formControlName="documento"  placeholder=" Insira o Documento">
+                  <div *ngIf="f.documento.errors?.required" class="invalid-feedback">
+                    documento é obrigatório
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label>Qualificação</label>
+                  <select class="form-control" formControlName="qualificacao">
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option *ngFor="let qualificacao of qualificacoes" [value]="qualificacao.id">{{ qualificacao.descricao }}</option>
+                  </select>
+                </div>
+              </div>
+
+              <hr>
+
+              <strong>Endereço:</strong>
+
+              <div class="form-row">
+                <div class="form-group col-md-2">
+                  <label>CEP</label>
+                  <input type="text" (blur)="consultaCep($event.target.value, f)" class="form-control" [ngClass]="cssValidator(f.cep)"
+                  formControlName="cep" placeholder="Insira o CEP">
+                  <div *ngIf="f.cep.errors?.required" class="invalid-feedback">
+                    cep é obrigatório
+                  </div>
+                  <div *ngIf="f.cep.errors?.minlength" class="invalid-feedback">
+                    cep deve ter no mínimo 8 caracteres.
+                  </div>
+                  <div *ngIf="f.cep.errors?.maxlength" class="invalid-feedback">
+                    cep deve ter no máximo 8 caracteres.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label>Rua</label>
+                  <input type="text" disabled="" class="form-control" [ngClass]="cssValidator(f.rua)"
+                  formControlName="rua" placeholder="Rua">
+                </div>
+              </div>
+
+              <div class="form-row">
 
 
+              </div>
 
+
+            </div>
+            <div class="card-footer">
+              <div class="d-flex">
+                <button class="btn btn-outline-secondary mr-auto border" routerLink="/pessoas" (click)="reseteForm()" >
+                  Cancelar
+                </button>
+                <button class="btn btn-success" [disabled]="!form.valid" >
+                  <!-- <span class="spinner-border spinner-border-sm mr-1"></span> -->
+                  Salvar Pessoa
+                </button>
+              </div>
+            </div>
+          </form>
           </div>
-        </div>
 
       </div>
       <!--/. container-fluid -->

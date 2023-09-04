@@ -14,5 +14,8 @@ namespace BackOffice.Dominio.Interfaces
         Task<Pessoa> CadastrarPessoa(Pessoa pessoa);
         Task<Pessoa> AtualizarPessoa(Pessoa pessoa);
         Task<Pessoa> RemoverPessoa(Pessoa pessoa);
+        Task<IEnumerable<TipoPessoa>> ListarTiposPessoa();
+        Task<IEnumerable<TipoPerfil>> ListarTiposPerfil();
+        Task<IEnumerable<Qualificacao>> ListarQualificacoes();
     }
 }

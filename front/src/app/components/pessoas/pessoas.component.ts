@@ -56,9 +56,6 @@ export class PessoasComponent implements OnInit {
         next: (p: Pessoa[]) => {
           this.pessoas = p;
           this.pessoasFiltradas = p;
-
-          console.log('PESSOAS: ', this.pessoas)
-          console.log('TIPO PESSOA: ', this.pessoas[0].tipoPessoa)
         },
         error: (error: string) => {
           this.spinner.hide();

@@ -113,5 +113,68 @@ namespace BackOffice.API.Controllers
             return Ok(pessoa);
         }
 
+        [HttpGet]
+        [Route("ListarTiposPessoa")]
+        public async Task<ActionResult<IEnumerable<TipoPessoaDTO>>> ListarTiposPessoa()
+        {
+
+            try
+            {
+                var tiposPessoa = await _pessoasService.ListarTiposPessoa();
+
+                if (tiposPessoa.ToList().Count == 0) return NotFound("Nenhum registro encontrado.");
+
+                return Ok(tiposPessoa);
+            }
+            catch (Exception _error)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError,
+                    $"Erro ao tentar listar os registros. Erro: {_error.Message}");
+            }
+
+        }
+
+        [HttpGet]
+        [Route("ListarTiposPerfil")]
+        public async Task<ActionResult<IEnumerable<TipoPerfilDTO>>> ListarTiposPerfil()
+        {
+
+            try
+            {
+                var tiposPerfil = await _pessoasService.ListarTiposPerfil();
+
+                if (tiposPerfil.ToList().Count == 0) return NotFound("Nenhum registro encontrado.");
+
+                return Ok(tiposPerfil);
+            }
+            catch (Exception _error)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError,
+                    $"Erro ao tentar listar os registros. Erro: {_error.Message}");
+            }
+
+        }
+
+        [HttpGet]
+        [Route("ListarQualificacoes")]
+        public async Task<ActionResult<IEnumerable<QualificacaoDTO>>> ListarQualificacoes()
+        {
+
+            try
+            {
+                var qualificacoes = await _pessoasService.ListarQualificacoes();
+
+                if (qualificacoes.ToList().Count == 0) return NotFound("Nenhum registro encontrado.");
+
+                return Ok(qualificacoes);
+            }
+            catch (Exception _error)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError,
+                    $"Erro ao tentar listar os registros. Erro: {_error.Message}");
+            }
+
+        }
+
     }
 }

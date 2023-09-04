@@ -9,7 +9,7 @@ import { PessoasComponent } from './components/pessoas/pessoas.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PessoaService } from './services/pessoas/pessoa.service';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -32,6 +32,7 @@ import { PessoasNovoComponent } from './components/pessoas/pessoas-novo/pessoas-
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     ModalModule.forRoot(),
     ToastrModule.forRoot({
       timeOut: 3000,
