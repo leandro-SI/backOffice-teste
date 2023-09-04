@@ -35,7 +35,7 @@ namespace BackOffice.Infra.Repositories
 
         public async Task<IEnumerable<Pessoa>> ListarPessoas()
         {
-            return await _pessoaContext.Pessoas.ToListAsync();
+            return await _pessoaContext.Pessoas.Include(p => p.TipoPessoa).ToListAsync();
         }
 
         public async Task<Pessoa> AtualizarPessoa(Pessoa pessoa)

@@ -35,9 +35,9 @@ namespace BackOffice.Aplicacao.DTOs
 
         public long TipoPessoaId { get; set; }
 
-        [JsonIgnore]
-        [IgnoreDataMember]
-        public TipoPessoa TipoPessoa { get; set; }
+        //[JsonIgnore]
+        //[IgnoreDataMember]
+        public TipoPessoaDTO TipoPessoa { get; set; }
 
         public long EnderecoId { get; set; }
 

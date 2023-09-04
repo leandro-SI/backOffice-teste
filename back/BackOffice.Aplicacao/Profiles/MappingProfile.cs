@@ -15,6 +15,7 @@ namespace BackOffice.Aplicacao.Profiles
         {
             CreateMap<Departamento, DepartamentoDTO>().ReverseMap();
             CreateMap<Pessoa, PessoaDTO>().ReverseMap();
+            CreateMap<TipoPessoa, TipoPessoaDTO>().ReverseMap();
         }
     }
 }
