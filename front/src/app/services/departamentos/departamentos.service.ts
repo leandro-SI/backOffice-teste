@@ -36,4 +36,8 @@ export class DepartamentoService {
     return this.http.put<DepartamentoDTO>(this.baseURL + "AtualizarDepartamento/" + id, request.departamentoDTO);
   }
 
+  getDepartamento(id: number) : Observable<DepartamentoDTO> {
+    return this.http.get<DepartamentoDTO>(this.baseURL + "BuscarDepartamento?id=" + id);
+  }
+
 }

@@ -20,6 +20,7 @@ import { NgxMaskModule } from 'ngx-mask';
 import { PessoasEditarComponent } from './components/pessoas/pessoas-editar/pessoas-editar.component';
 import { DepartamentosComponent } from './components/departamentos/departamentos.component';
 import { DepartamentosNovoComponent } from './components/departamentos/departamentos-novo/departamentos-novo.component';
+import { DepartamentosEditarComponent } from './components/departamentos/departamentos-editar/departamentos-editar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { DepartamentosNovoComponent } from './components/departamentos/departame
     DashboardComponent,
     DateTimeFormatPipe,
     DepartamentosComponent,
-    DepartamentosNovoComponent
+    DepartamentosNovoComponent,
+    DepartamentosEditarComponent
    ],
   imports: [
     BrowserModule,

@@ -60,7 +60,6 @@ export class DepartamentosComponent implements OnInit {
           this.departamentos = de;
           this.departamentosFiltrados = de;
 
-          console.log('DePARTAMENTOS: ', this.departamentos)
         },
         error: (error: string) => {
           this.spinner.hide();

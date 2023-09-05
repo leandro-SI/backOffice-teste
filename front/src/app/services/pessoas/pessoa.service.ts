@@ -20,6 +20,10 @@ export class PessoaService {
     return this.http.get<Pessoa[]>(this.baseURL + "ListarPessoas");
   }
 
+  getPessoasDTO() : Observable<PessoaDTO[]> {
+    return this.http.get<PessoaDTO[]>(this.baseURL + "ListarPessoas");
+  }
+
 
   getTiposPessoa() : Observable<TipoPessoa[]> {
     return this.http.get<TipoPessoa[]>(this.baseURL + "ListarTiposPessoa");
