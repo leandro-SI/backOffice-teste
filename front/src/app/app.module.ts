@@ -16,12 +16,15 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PessoasNovoComponent } from './components/pessoas/pessoas-novo/pessoas-novo.component';
+import { NgxMaskModule } from 'ngx-mask';
+import { PessoasEditarComponent } from './components/pessoas/pessoas-editar/pessoas-editar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PessoasComponent,
     PessoasNovoComponent,
+    PessoasEditarComponent,
     NavComponent,
     DashboardComponent,
     DateTimeFormatPipe
@@ -40,7 +43,8 @@ import { PessoasNovoComponent } from './components/pessoas/pessoas-novo/pessoas-
       preventDuplicates: true,
       progressBar: true
     }),
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgxMaskModule.forRoot()
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [

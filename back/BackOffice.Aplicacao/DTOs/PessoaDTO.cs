@@ -16,7 +16,7 @@ namespace BackOffice.Aplicacao.DTOs
         public long Id { get; set; }
 
         [Required(ErrorMessage = "O Nome é Requerido")]
-        [MinLength(10)]
+        [MinLength(5)]
         [MaxLength(100)]
         [DisplayName("Nome")]
         public string Nome { get; set; }
@@ -28,7 +28,7 @@ namespace BackOffice.Aplicacao.DTOs
         public string Documento { get; set; }
 
         [Required(ErrorMessage = "O Apelido é Requerido")]
-        [MinLength(10)]
+        [MinLength(5)]
         [MaxLength(100)]
         [DisplayName("Apelido")]
         public string Apelido { get; set; }
@@ -41,15 +41,15 @@ namespace BackOffice.Aplicacao.DTOs
 
         public long EnderecoId { get; set; }
 
-        [JsonIgnore]
-        [IgnoreDataMember]
-        public Endereco Endereco { get; set; }
+        //[JsonIgnore]
+        //[IgnoreDataMember]
+        public EnderecoDTO Endereco { get; set; }
 
         public long QualificacaoId { get; set; }
 
-        [JsonIgnore]
-        [IgnoreDataMember]
-        public Qualificacao Qualificacao { get; set; }
+        //[JsonIgnore]
+        //[IgnoreDataMember]
+        public QualificacaoDTO Qualificacao { get; set; }
 
         public DateTime DataCadastro { get; set; }
         public DateTime DataAtualizacao { get; set; }

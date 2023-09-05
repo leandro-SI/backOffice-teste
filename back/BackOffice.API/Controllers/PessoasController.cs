@@ -67,7 +67,7 @@ namespace BackOffice.API.Controllers
 
                 await _pessoasService.CadastrarPessoa(pessoaDTO);
 
-                return new CreatedAtRouteResult("CadastrarPessoa", new { id = pessoaDTO.Id }, pessoaDTO);
+                return Ok("true");
             }
             catch (Exception _error)
             {
@@ -77,7 +77,7 @@ namespace BackOffice.API.Controllers
         }
 
         [HttpPut]
-        [Route("AtualizarPessoa")]
+        [Route("AtualizarPessoa/{id}")]
         public async Task<ActionResult> AtualizarPessoa(long id, [FromBody] PessoaDTO pessoaDTO)
         {
             try

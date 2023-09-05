@@ -30,6 +30,8 @@ namespace BackOffice.Infra.Repositories
         public async Task<Pessoa> BuscarPessoaPorId(long id)
         {
             return await _pessoaContext.Pessoas.Include(p => p.Endereco)
+                .Include(p => p.TipoPessoa)
+                .Include(p => p.Qualificacao)
                 .SingleOrDefaultAsync(p => p.Id == id);
         }
 

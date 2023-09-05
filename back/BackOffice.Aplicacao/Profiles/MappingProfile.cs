@@ -18,6 +18,7 @@ namespace BackOffice.Aplicacao.Profiles
             CreateMap<TipoPessoa, TipoPessoaDTO>().ReverseMap();
             CreateMap<TipoPerfil, TipoPerfilDTO>().ReverseMap();
             CreateMap<Qualificacao, QualificacaoDTO>().ReverseMap();
+            CreateMap<Endereco, EnderecoDTO>().ReverseMap();
         }
     }
 }

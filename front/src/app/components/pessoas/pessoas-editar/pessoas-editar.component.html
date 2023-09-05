@@ -7,13 +7,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Pessoas-Novo</h1>
+            <h1 class="m-0 text-dark">Pessoas-Editar</h1>
           </div>
           <!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Pessoas</a></li>
-              <li class="breadcrumb-item active">Novo</li>
+              <li class="breadcrumb-item active">Editar</li>
             </ol>
           </div>
           <!-- /.col -->
@@ -31,6 +31,7 @@
         <div class="card rounded shadow-sm">
           <form [formGroup]="form" #fr="ngForm" >
             <div class="p-3">
+
               <div class="form-row">
 
                 <div class="form-group col-md-6">
@@ -70,7 +71,7 @@
               <div class="form-row">
                 <div class="form-group col-md-3">
                   <label>Tipo Pessoa</label>
-                  <select class="form-control" formControlName="tipoPessoa">
+                  <select class="form-control" formControlName="tipoPessoaId" [(value)]="pessoaForm.tipoPessoaId">
                     <option value="" disabled selected>Selecione uma opção</option>
                     <option *ngFor="let tipoPessoa of tiposPessoa" [value]="tipoPessoa.id">{{ tipoPessoa.descricao }}</option>
                   </select>
@@ -88,10 +89,11 @@
                 </div>
               </div>
 
+
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label>Qualificação</label>
-                  <select class="form-control" formControlName="qualificacao">
+                  <select class="form-control" formControlName="qualificacaoId" [(value)]="pessoaForm.qualificacaoId">
                     <option value="" disabled selected>Selecione uma opção</option>
                     <option *ngFor="let qualificacao of qualificacoes" [value]="qualificacao.id">{{ qualificacao.descricao }}</option>
                   </select>
@@ -137,13 +139,14 @@
                 </div>
               </div>
 
+
             </div>
             <div class="card-footer">
               <div class="d-flex">
-                <button class="btn btn-outline-secondary mr-auto border" routerLink="/pessoas" (click)="reseteForm()" >
+                <button class="btn btn-outline-secondary mr-auto border" routerLink="/pessoas" >
                   Cancelar
                 </button>
-                <button class="btn btn-success" [disabled]="!form.valid" (click)="salvarPessoa()" >
+                <button class="btn btn-success" [disabled]="!form.valid" (click)="atualizarPessoa()" >
                   <!-- <span class="spinner-border spinner-border-sm mr-1"></span> -->
                   Salvar Pessoa
                 </button>

@@ -77,7 +77,7 @@
                 <td class="d-none d-md-table-cell">{{ pessoa.tipoPessoa?.descricao }}</td>
                 <td>{{ pessoa.dataCadastro | DateFormatPipe }}</td>
                 <td>
-                  <button type="button" title="Editar Registro" class="btn btn-primary btn-sm mr-2" tooltip="Editar" >
+                  <button type="button" title="Editar Registro" class="btn btn-primary btn-sm mr-2" tooltip="Editar" routerLink="/pessoas/editar/{{pessoa.id}}" >
                     <i class="fa fa-edit"></i>
                   </button>
                   <button type="button" class="btn btn-danger btn-sm mr-2" title="Deletar Registro" tooltip="Excluir" (click)="openModal(template)" >
