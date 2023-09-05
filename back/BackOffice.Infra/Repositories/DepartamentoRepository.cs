@@ -35,7 +35,9 @@ namespace BackOffice.Infra.Repositories
 
         public async Task<IEnumerable<Departamento>> ListarDepartamentos()
         {
-            return await _departamentoContext.Departamentos.ToListAsync();
+            return await _departamentoContext.Departamentos
+                .Include(d => d.Pessoa)
+                .ToListAsync();
         }
 
         public async Task<Departamento> AtualizarDepartamento(Departamento departamento)

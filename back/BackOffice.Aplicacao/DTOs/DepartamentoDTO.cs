@@ -20,9 +20,9 @@ namespace BackOffice.Aplicacao.DTOs
         public string Nome { get; set; }
         public long PessoaId { get; set; }
 
-        [JsonIgnore]
-        [IgnoreDataMember]
-        public Pessoa Pessoa { get; set; }
+        //[JsonIgnore]
+        //[IgnoreDataMember]
+        public PessoaDTO Pessoa { get; set; }
         public DateTime DataCadastro { get; set; }
         public DateTime DataAtualizacao { get; set; }
     }

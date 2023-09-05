@@ -18,6 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PessoasNovoComponent } from './components/pessoas/pessoas-novo/pessoas-novo.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { PessoasEditarComponent } from './components/pessoas/pessoas-editar/pessoas-editar.component';
+import { DepartamentosComponent } from './components/departamentos/departamentos.component';
+import { DepartamentosNovoComponent } from './components/departamentos/departamentos-novo/departamentos-novo.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { PessoasEditarComponent } from './components/pessoas/pessoas-editar/pess
     PessoasEditarComponent,
     NavComponent,
     DashboardComponent,
-    DateTimeFormatPipe
+    DateTimeFormatPipe,
+    DepartamentosComponent,
+    DepartamentosNovoComponent
    ],
   imports: [
     BrowserModule,
