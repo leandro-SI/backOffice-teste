@@ -52,8 +52,6 @@ export class PessoaService {
       pessoaDTO: pessoaDTO,
     }
 
-    console.log('ATUALIZA PESSOA DTO: ', pessoaDTO)
-
     return this.http.put<PessoaDTO>(this.baseURL + "AtualizarPessoa/" + id, request.pessoaDTO);
   }
 
